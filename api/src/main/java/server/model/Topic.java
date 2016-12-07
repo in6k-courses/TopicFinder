@@ -15,11 +15,10 @@ public class Topic {
     private long id;
 
     @NotNull
-    @Size(min = 3, max = 80)
+    @Size(min = 3, max = 150)
     private String title;
 
     @NotNull
-    @Size(min = 2, max = 80)
     private String description;
 
     public Topic() {
