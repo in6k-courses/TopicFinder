@@ -22,13 +22,6 @@ ENV MAVEN_HOME /opt/maven
 # remove download archive files
 RUN apt-get clean
 
-#RUN mkdir -p /api-server
-#WORKDIR /api-server
-
-#RUN mvn package
-
 EXPOSE 8080
-#CMD chmod +x /api-server/build.sh
-#ENTRYPOINT ["/api-server/build.sh"]
 
 
