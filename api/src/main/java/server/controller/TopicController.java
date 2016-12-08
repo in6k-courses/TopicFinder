@@ -43,4 +43,9 @@ public class TopicController {
         return "";
     }
 
+    @RequestMapping("/docker-test")
+    @ResponseBody
+    public String helloFromDocker(String title, String description) {
+        return "Hello from docker!";
+    }
 }
