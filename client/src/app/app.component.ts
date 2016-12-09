@@ -1,21 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-
-import { Topic } from './model/topic.model';
-import { TopicService } from './service/topic.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [TopicService]
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  topics: Topic[];
-
-  constructor(private topicService: TopicService) { }
-
-  ngOnInit(): void {
-    this.topicService.getTopics().then(topics => this.topics = topics);
-  }
 }

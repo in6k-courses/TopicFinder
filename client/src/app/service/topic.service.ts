@@ -15,7 +15,6 @@ export class TopicService {
   constructor(private http: Http) { }
 
   getTopics(): Promise<Topic[]> {
-    console.log(this.http.get(this.topicsUrl).toString());
     return this.http.get(this.topicsUrl)
       .toPromise()
       .then(response => response.json() as Topic[])
