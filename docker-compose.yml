@@ -6,7 +6,6 @@ api:
    - "8080:8080"
   volumes:
    - ./api:/api-server
-  working_dir: /api-server
   command: sh /api-server/build.sh
   links:
      - db
