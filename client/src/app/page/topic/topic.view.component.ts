@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 import {TopicService} from "../../service/topic.service";
 import {Topic} from "../../model/topic.model";
+
 @Component({
     selector: 'topic-view',
     templateUrl: './topic.view.component.html',

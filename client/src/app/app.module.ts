@@ -10,13 +10,17 @@ import './rxjs-extensions';
 import {RouterModule} from "@angular/router";
 import {TopicViewComponent} from "./page/topic/topic.view.component";
 import {HeaderMenuComponent} from "./header/menu/header.menu.component";
+import {TopicTopMenuComponent} from "./page/topic/menu/topic.top.menu.component";
+import {TopicFilterComponent} from "./page/topic/filter/topic.filter.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TopicViewComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    TopicTopMenuComponent,
+    TopicFilterComponent
   ],
   imports: [
     BrowserModule,

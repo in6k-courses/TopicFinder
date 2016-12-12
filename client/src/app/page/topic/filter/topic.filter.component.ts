@@ -4,7 +4,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'topic-filter'
+  selector: 'topic-filter',
+  templateUrl: './topic.filter.component.html',
 })
 export class TopicFilterComponent {
 
