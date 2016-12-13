@@ -3,3 +3,10 @@
   <option value="active">Active</option>
   <option value="archive">Archive</option>
 </select>
+
+<select (change)="onCategoryChange($event.target.value)">
+  <option value="all" selected="selected">All</option>
+  <option *ngFor="let category of categories" value="{{category.title}}">
+    {{category.title}}
+  </option>
+</select>

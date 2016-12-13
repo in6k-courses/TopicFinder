@@ -49,7 +49,7 @@ export class TopicViewComponent {
   }
 
   getTopics(status: string) {
-    this.topicService.getTest().subscribe(
+    this.topicService.getTopics().subscribe(
       topics => this.topics = topics,
       error => console.error('Error'),
       () => this.applyStatusFilter(status)

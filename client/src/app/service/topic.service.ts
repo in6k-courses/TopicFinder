@@ -2,7 +2,6 @@
  * Created by employee on 12/7/16.
  */
 import { Injectable } from '@angular/core';
-import { Topic } from '../model/topic.model';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -14,14 +13,7 @@ export class TopicService {
 
   constructor(private http: Http) { }
 
-  getTopics(): Promise<Topic[]> {
-    return this.http.get(this.topicsUrl)
-      .toPromise()
-      .then(response => response.json() as Topic[])
-      .catch(this.handleError);
-  }
-
-  getTest() {
+  getTopics() {
     return this.http.get(this.topicsUrl)
       .map(response => response.json())
   }
