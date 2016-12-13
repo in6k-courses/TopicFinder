@@ -1,7 +1,7 @@
 /**
  * Created by yevheniis on 12/9/16.
  */
-import { Component } from '@angular/core';
+import {Component, ChangeDetectionStrategy, Input, NgZone} from '@angular/core';
 import {TopicService} from "../../service/topic.service";
 import {Topic} from "../../model/topic.model";
 
@@ -13,11 +13,50 @@ import {Topic} from "../../model/topic.model";
 })
 export class TopicViewComponent {
 
-    topics: Topic[];
+  topics: Topic[] = [];
 
-    constructor(private topicService: TopicService) { }
+  constructor(private topicService: TopicService) { }
 
-    ngOnInit(): void {
-        this.topicService.getTopics().then(topics => this.topics = topics);
+  applyStatusFilter(statusFilter: string): void {
+    console.log('applyStatusFilter');
+    let filteredTopics = [];
+    switch (statusFilter)
+    {
+      case 'active' :
+        console.log('active');
+        for (let topic of this.topics) {
+          console.log(topic.status); // 9,2,5
+          if (topic.status == true) {
+            filteredTopics.push(topic);
+          }
+        }
+        break;
+      case 'archive' :
+        console.log('archive');
+        for (let topic of this.topics) {
+          console.log(topic.status); // 9,2,5
+          if (topic.status == false) {
+            filteredTopics.push(topic);
+          }
+        }
+        break;
+      default:
+        filteredTopics = this.topics;
     }
+    this.topics = filteredTopics;
+    console.log(this.topics);
+    console.log(this.topics);
+  }
+
+  getTopics(status: string) {
+    this.topicService.getTest().subscribe(
+      topics => this.topics = topics,
+      error => console.error('Error'),
+      () => this.applyStatusFilter(status)
+    )
+  }
+
+  ngOnInit(): void {
+    this.getTopics('all');
+  }
 }

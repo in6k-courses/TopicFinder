@@ -11,5 +11,4 @@ import java.util.List;
  */
 @Transactional
 public interface TopicDao extends CrudRepository<Topic, Long> {
-
 }

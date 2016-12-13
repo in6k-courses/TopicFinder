@@ -1,7 +1,8 @@
 /**
  * Created by yevheniis on 12/12/16.
  */
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {TopicViewComponent} from "../topic.view.component";
 
 @Component({
   selector: 'topic-filter',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class TopicFilterComponent {
 
+  constructor(private topicViewComponent: TopicViewComponent) { }
+
+  onStatusChange(status) {
+    this.topicViewComponent.getTopics(status);
+  }
 }
