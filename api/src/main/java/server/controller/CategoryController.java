@@ -6,10 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import server.Utils;
 import server.dao.CategoryDao;
 import server.dao.TopicDao;
 import server.model.Category;
 import server.model.Topic;
+import server.service.CategoryService;
+import server.service.TopicService;
 
 import java.util.List;
 
@@ -20,19 +23,11 @@ import java.util.List;
 @RequestMapping("/api/topic/category")
 public class CategoryController {
     @Autowired
-    private CategoryDao categoryDao;
+    private CategoryService categoryService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
-    public String getAllCategory() {
-        ObjectMapper mapper = new ObjectMapper();
-        List<Category> categoryList = (List<Category>) categoryDao.findAll();
-        String jsonInString = null;
-        try {
-            jsonInString = mapper.writeValueAsString(categoryList);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return jsonInString;
+    public String viewAllTopics() {
+        return Utils.getJsonFromObject(categoryService.findAll());
     }
 }

@@ -1,15 +1,12 @@
 package server.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import server.dao.TopicDao;
-import server.model.Topic;
-
-import java.util.List;
+import server.service.TopicService;
+import server.Utils;
 
 /**
  * Created by employee on 12/6/16.
@@ -18,20 +15,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/topic")
 public class TopicController {
+
     @Autowired
-    private TopicDao topicDao;
+    private TopicService topicService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
     public String viewAllTopics() {
-        ObjectMapper mapper = new ObjectMapper();
-        List<Topic> topic = (List<Topic>) topicDao.findAll();
-        String jsonInString = null;
-        try {
-            jsonInString = mapper.writeValueAsString(topic);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return jsonInString;
+        return Utils.getJsonFromObject(topicService.findAll());
     }
+
 }

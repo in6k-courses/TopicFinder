@@ -1,7 +1,7 @@
 /**
  * Created by yevheniis on 12/9/16.
  */
-import {Component, ChangeDetectionStrategy, Input, NgZone} from '@angular/core';
+import {Component} from '@angular/core';
 import {TopicService} from "../../service/topic.service";
 import {Topic} from "../../model/topic.model";
 
@@ -25,7 +25,7 @@ export class TopicViewComponent {
       case 'active' :
         console.log('active');
         for (let topic of this.topics) {
-          console.log(topic.status); // 9,2,5
+          console.log(topic.status);
           if (topic.status == true) {
             filteredTopics.push(topic);
           }
@@ -34,7 +34,7 @@ export class TopicViewComponent {
       case 'archive' :
         console.log('archive');
         for (let topic of this.topics) {
-          console.log(topic.status); // 9,2,5
+          console.log(topic.status);
           if (topic.status == false) {
             filteredTopics.push(topic);
           }

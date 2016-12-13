@@ -15,4 +15,6 @@ export class TopicFilterComponent {
   onStatusChange(status) {
     this.topicViewComponent.getTopics(status);
   }
+
+
 }
