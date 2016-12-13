@@ -22,6 +22,9 @@ ENV MAVEN_HOME /opt/maven
 # remove download archive files
 RUN apt-get clean
 
+RUN mkdir /api-server
+WORKDIR /api-server
+
 EXPOSE 8080
 
 

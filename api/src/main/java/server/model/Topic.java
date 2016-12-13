@@ -21,6 +21,9 @@ public class Topic {
     @NotNull
     private String description;
 
+    @NotNull
+    private boolean status;
+
     public Topic() {
     }
 
@@ -51,5 +54,13 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

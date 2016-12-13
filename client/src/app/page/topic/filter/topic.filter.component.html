@@ -1,5 +1,5 @@
-<select name="topic_status">
-  <option value="all">All</option>
+<select (change)="onStatusChange($event.target.value)">
+  <option value="all" selected="selected">All</option>
   <option value="active">Active</option>
   <option value="archive">Archive</option>
 </select>
