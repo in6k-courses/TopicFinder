@@ -14,6 +14,7 @@ import {TopicTopMenuComponent} from "./topic/menu/topic.top.menu.component";
 import {TopicFilterComponent} from "./topic/filter/topic.filter.component";
 import {TopicAddComponent} from "./topic/add/topic.add.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import {TopicAddComponent} from "./topic/add/topic.add.component";
     HeaderMenuComponent,
     TopicTopMenuComponent,
     TopicFilterComponent,
-    TopicAddComponent
+    TopicAddComponent,
+
   ],
   imports: [
     BrowserModule,
