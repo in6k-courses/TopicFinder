@@ -6,4 +6,5 @@ export class Topic {
   title: string;
   description: string;
   status: boolean;
+  categoryId: number;
 }

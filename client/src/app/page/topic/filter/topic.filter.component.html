@@ -1,14 +1,14 @@
 <label>Status</label>
-<select (change)="onStatusChange($event.target.value)">
+<select (change)="onStatusFilterChange($event.target.value)">
   <option value="all" selected="selected">All</option>
   <option value="active">Active</option>
   <option value="archive">Archive</option>
 </select>
 
 <label>Category</label>
-<select>
+<select (change)="onCategoryFilterChange($event.target.value)">
   <option value="all" selected="selected">All</option>
-  <option *ngFor="let category of categories" value="{{category.title}}">
+  <option *ngFor="let category of this.topicViewComponent.categories" value="{{category.title}}">
     {{category.title}}
   </option>
 </select>
