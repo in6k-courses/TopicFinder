@@ -8,6 +8,5 @@ import javax.transaction.Transactional;
 /**
  * Created by yevheniis on 12/13/16.
  */
-@Transactional
 public interface CategoryDao extends CrudRepository<Category, Long> {
 }

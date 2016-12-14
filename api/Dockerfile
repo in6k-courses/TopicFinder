@@ -25,6 +25,6 @@ RUN apt-get clean
 RUN mkdir /api-server
 WORKDIR /api-server
 
-EXPOSE 8080
+
 
 

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import server.dao.CategoryDao;
 import server.model.Category;
-
 import java.util.List;
+import server.Utils;
 
 /**
  * Created by yevheniis on 12/13/16.
@@ -17,6 +17,6 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public List<Category> findAll() {
-        return (List<Category>) categoryDao.findAll();
+        return Utils.getListFromIterable(categoryDao.findAll());
     }
 }

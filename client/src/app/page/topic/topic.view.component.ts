@@ -17,6 +17,10 @@ export class TopicViewComponent {
 
   constructor(private topicService: TopicService) { }
 
+  applyFilters(status: string, category: string) {
+
+  }
+
   applyStatusFilter(statusFilter: string): void {
     console.log('applyStatusFilter');
     let filteredTopics = [];

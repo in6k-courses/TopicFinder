@@ -1,20 +1,20 @@
 /**
- * Created by employee on 12/7/16.
+ * Created by yevheniis on 12/13/16.
  */
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class TopicService {
+export class CategoryService {
 
   private headers = new Headers({'Content-Type': 'text/html;charset=UTF-8'});
-  private topicsUrl = 'api/topic/all';
+  private categoryUrl = 'api/topic/category/all';
 
   constructor(private http: Http) { }
 
-  getTopics() {
-    return this.http.get(this.topicsUrl)
+  getCategories() {
+    return this.http.get(this.categoryUrl)
       .map(response => response.json())
   }
 
