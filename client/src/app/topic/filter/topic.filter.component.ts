@@ -2,7 +2,7 @@
  * Created by yevheniis on 12/12/16.
  */
 import {Component} from '@angular/core';
-import {TopicViewComponent} from "../topic.view.component";
+import {TopicViewComponent} from "../view/topic.view.component";
 
 @Component({
   selector: 'topic-filter',

@@ -19,4 +19,9 @@ public class TopicServiceImpl implements TopicService {
     public List<Topic> findAll() {
         return Utils.getListFromIterable(topicDao.findAll());
     }
+
+    @Override
+    public void add(Topic topic) {
+        topicDao.save(topic);
+    }
 }

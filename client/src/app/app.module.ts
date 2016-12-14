@@ -8,10 +8,11 @@ import {HeaderComponent} from "./header/header.component";
 
 import './rxjs-extensions';
 import {RouterModule} from "@angular/router";
-import {TopicViewComponent} from "./page/topic/topic.view.component";
+import {TopicViewComponent} from "./topic/view/topic.view.component";
 import {HeaderMenuComponent} from "./header/menu/header.menu.component";
-import {TopicTopMenuComponent} from "./page/topic/menu/topic.top.menu.component";
-import {TopicFilterComponent} from "./page/topic/filter/topic.filter.component";
+import {TopicTopMenuComponent} from "./topic/menu/topic.top.menu.component";
+import {TopicFilterComponent} from "./topic/filter/topic.filter.component";
+import {TopicAddComponent} from "./topic/add/topic.add.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {TopicFilterComponent} from "./page/topic/filter/topic.filter.component";
     TopicViewComponent,
     HeaderMenuComponent,
     TopicTopMenuComponent,
-    TopicFilterComponent
+    TopicFilterComponent,
+    TopicAddComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,10 @@ import {TopicFilterComponent} from "./page/topic/filter/topic.filter.component";
       {
         path: '',
         component: TopicViewComponent
+      },
+      {
+        path: 'topic/add',
+        component: TopicAddComponent
       }
     ])
   ],

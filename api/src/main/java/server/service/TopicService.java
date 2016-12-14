@@ -11,4 +11,5 @@ import java.util.List;
 @Transactional
 public interface TopicService {
    List<Topic> findAll();
+   void add(Topic topic);
 }

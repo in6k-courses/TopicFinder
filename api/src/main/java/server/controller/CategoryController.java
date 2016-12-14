@@ -27,7 +27,7 @@ public class CategoryController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
-    public String viewAllTopics() {
+    public String getAllCategories() {
         return Utils.getJsonFromObject(categoryService.findAll());
     }
 }
