@@ -7,6 +7,7 @@ import {TopicViewComponent} from "../view/topic.view.component";
 @Component({
   selector: 'topic-filter',
   templateUrl: './topic.filter.component.html',
+  styleUrls: ['./topic.filter.component.css']
 })
 export class TopicFilterComponent {
 

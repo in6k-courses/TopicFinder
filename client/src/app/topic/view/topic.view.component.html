@@ -1,7 +1,14 @@
 <topic-top-menu></topic-top-menu>
-<div *ngFor="let topic of topics" class="topic">
-  <p>id: {{topic.id}}</p>
-  <h4>{{topic.title}}</h4>
-  <p>{{topic.description}}</p>
-  <p>category {{topic.categoryId}}</p>
+<div class="container">
+  <div class="col-md-12">
+    <div *ngFor="let topic of topics" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{topic.title}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>Category: {{this.getCategoryById(topic.categoryId)}}</p>
+        <p>Description: {{topic.description}}</p>
+      </div>
+    </div>
+  </div>
 </div>

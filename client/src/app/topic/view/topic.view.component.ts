@@ -98,6 +98,17 @@ export class TopicViewComponent {
     console.log(this.topics);
   }
 
+  getCategoryById(id: number): string {
+    let categoryName: string;
+    for (let category of this.categories) {
+      if (category.id == id) {
+        categoryName = category.title;
+        break;
+      }
+    }
+    return categoryName;
+  }
+
   updateTopics() {
     this.topicService.getTopics().subscribe(
       topics => this.topics = topics,

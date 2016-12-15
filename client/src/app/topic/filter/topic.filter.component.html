@@ -1,14 +1,31 @@
-<label>Status</label>
-<select (change)="onStatusFilterChange($event.target.value)">
-  <option value="all" selected="selected">All</option>
-  <option value="active">Active</option>
-  <option value="archive">Archive</option>
-</select>
-
-<label>Category</label>
-<select (change)="onCategoryFilterChange($event.target.value)">
-  <option value="all" selected="selected">All</option>
-  <option *ngFor="let category of this.topicViewComponent.categories" value="{{category.title}}">
-    {{category.title}}
-  </option>
-</select>
+<div class="row">
+  <div class="col-md-2">
+    <form>
+      <div class="form-group">
+        <label for="sel1">Status:</label>
+        <select (change)="onStatusFilterChange($event.target.value)" class="form-control" id="sel1">
+          <option value="all" selected="selected">All</option>
+          <option value="active">Active</option>
+          <option value="archive">Archive</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-2">
+    <form>
+      <div class="form-group">
+        <label for="sel2">Category:</label>
+        <select (change)="onCategoryFilterChange($event.target.value)" class="form-control" id="sel2">
+          <option value="all" selected="selected">All</option>
+          <option *ngFor="let category of this.topicViewComponent.categories" value="{{category.title}}">
+            {{category.title}}
+          </option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+</div>

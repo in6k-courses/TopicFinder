@@ -23,8 +23,7 @@ import {TopicAddComponent} from "./topic/add/topic.add.component";
     HeaderMenuComponent,
     TopicTopMenuComponent,
     TopicFilterComponent,
-    TopicAddComponent,
-
+    TopicAddComponent
   ],
   imports: [
     BrowserModule,
