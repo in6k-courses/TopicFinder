@@ -1,0 +1,21 @@
+db:
+  build: ./db
+  ports:
+   - "33060:3306"
+api:
+  build: ./api
+  ports:
+   - "8080:8080"
+  volumes:
+   - ./api:/api-server
+  command: sh /api-server/build.sh
+  links:
+     - db
+client:
+  build: ./client
+  ports:
+   - "4200:4200"
+  volumes:
+   - ./client:/client
+  links:
+   - api

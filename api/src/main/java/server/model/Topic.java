@@ -21,6 +21,12 @@ public class Topic {
     @NotNull
     private String description;
 
+    @NotNull
+    private boolean status;
+
+    @NotNull
+    private int categoryId;
+
     public Topic() {
     }
 
@@ -51,5 +57,21 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }

@@ -1,0 +1,23 @@
+<div class="panel panel-default col-md-10 col-md-offset-1">
+  <div class="panel-body">
+    <h2>Add topic</h2>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input [(ngModel)]="topic.title" class="form-control" id="title" name="title">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input [(ngModel)]="topic.description" class="form-control" id="description" name="description">
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control"  id="category"
+                required
+                [(ngModel)]="topic.categoryId" name="category">
+          <option *ngFor="let category of categories" [value]="category.id">{{category.title}}</option>
+        </select>
+      </div>
+      <button (click)="addTopic()" class="btn btn-success">Add</button>
+      <button (click)="clearForm()" class="btn btn-danger">Clear</button>
+  </div>
+</div>
