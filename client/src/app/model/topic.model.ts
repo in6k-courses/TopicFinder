@@ -2,9 +2,10 @@
  * Created by employee on 12/7/16.
  */
 export class Topic {
-  id: number;
-  title: string;
-  description: string;
-  status: boolean;
-  categoryId: number;
+  constructor(public id: number,
+              public title:string,
+              public description: string,
+              public status: boolean,
+              public categoryId: number) {
+  }
 }

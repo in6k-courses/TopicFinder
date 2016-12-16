@@ -1,24 +1,23 @@
 <div class="panel panel-default col-md-10 col-md-offset-1">
   <div class="panel-body">
     <h2>Add topic</h2>
-    <form>
       <div class="form-group">
-        <label for="topicTitle">Title</label>
-        <input type="email" class="form-control" id="topicTitle">
+        <label for="title">Title</label>
+        <input [(ngModel)]="topic.title" class="form-control" id="title" name="title">
       </div>
       <div class="form-group">
-        <label for="topicDescription">Description</label>
-        <input type="password" class="form-control" id="topicDescription">
+        <label for="description">Description</label>
+        <input [(ngModel)]="topic.description" class="form-control" id="description" name="description">
       </div>
       <div class="form-group">
-        <label for="sel2">Category:</label>
-        <select (change)="onCategoryFilterChange($event.target.value)" class="form-control" id="sel2">
-          <option *ngFor="let category of categories" value="{{category.title}}">
-            {{category.title}}
-          </option>
+        <label for="category">Category:</label>
+        <select class="form-control"  id="category"
+                required
+                [(ngModel)]="topic.categoryId" name="category">
+          <option *ngFor="let category of categories" [value]="category.id">{{category.title}}</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+      <button (click)="addTopic()" class="btn btn-success">Add</button>
+      <button (click)="clearForm()" class="btn btn-danger">Clear</button>
   </div>
 </div>

@@ -2,14 +2,17 @@
  * Created by employee on 12/7/16.
  */
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import {Headers, Http, RequestOptions, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {Topic} from "../model/topic.model";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class TopicService {
 
-  private headers = new Headers({'Content-Type': 'text/html;charset=UTF-8'});
+  //private headers = new Headers({'Content-Type': 'text/html;charset=UTF-8'});
   private topicsUrl = 'api/topic/all';
+  private addTopicUrl = 'api/topic/add';
 
   constructor(private http: Http) { }
 
@@ -18,8 +21,13 @@ export class TopicService {
       .map(response => response.json())
   }
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
+  addTopic(obj: Object): Promise<Topic> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http
+      .post(this.addTopicUrl, JSON.stringify(obj), {headers: headers})
+      .toPromise()
+      .then(res => res.json())
+      .catch(err => console.log(err));
   }
+
 }

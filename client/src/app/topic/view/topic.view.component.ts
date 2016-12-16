@@ -6,6 +6,7 @@ import {TopicService} from "../../service/topic.service";
 import {Topic} from "../../model/topic.model";
 import {Category} from "../../model/topic.category.model";
 import {CategoryService} from "../../service/category.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'topic-view',
@@ -25,7 +26,8 @@ export class TopicViewComponent {
   selectedCategoryFilters: Category;
 
   constructor(private topicService: TopicService,
-              private categoryService: CategoryService
+              private categoryService: CategoryService,
+              private router: Router
   ) { }
 
   applyFilters() {
@@ -123,6 +125,11 @@ export class TopicViewComponent {
       error => console.error('Error'),
       () => this.applyFilters()
     )
+  }
+
+  topicEditRedirect(id: number) {
+    console.log(id);
+    this.router.navigate([`/topic/edit/${id}`]);
   }
 
   ngOnInit(): void {

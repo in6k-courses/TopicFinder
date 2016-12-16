@@ -1,6 +1,7 @@
 package server;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import server.model.Topic;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,6 +22,17 @@ public class Utils {
             e.printStackTrace();
         }
         return jsonInString;
+    }
+
+    public static Topic getTopicFromJson(String json) {
+        ObjectMapper mapper = new ObjectMapper();
+        Topic topic = null;
+        try {
+            topic = mapper.readValue(json, Topic.class);
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        return topic;
     }
 
     public static <E> List<E> getListFromIterable(Iterable<E> iter) {
